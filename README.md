@@ -3,6 +3,31 @@ There are two builds of snowboy in this project. One is for running under Nodejs
 for Python. These are cribbed and modified from the source more or less, but designed to get you up
 and running with keyword detection in these two environments.
 
+##.asoundrc file
+If you want to use CHIP's headphone out and a USB mic in, you can `nano .asoundrc` and 
+```
+pcm.usb
+{
+    type hw
+    card 1
+}
+
+pcm.!default
+{
+    type asym
+    playback.pcm
+    {
+        type plug
+        slave.pcm "dmix"
+    }
+    capture.pcm 
+    {
+        type plug
+        slave.pcm "usb"
+    }
+}
+```
+
 ##Snowboy and Node
 Make sure you have node version 6.9.1 - `node -v` will tell you. If you don't, you can
 uninstall node (`which node` and `which npm` then just `sudo rm` those paths), then install
