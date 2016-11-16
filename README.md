@@ -4,7 +4,7 @@ for Python. These are cribbed and modified from the source more or less, but des
 and running with keyword detection in these two environments.
 
 ##.asoundrc file
-If you want to use CHIP's headphone out and a USB mic in, you can `nano .asoundrc` and 
+If you want to use CHIP's headphone out and a USB mic in, you can `nano ~/.asoundrc` and 
 ```
 pcm.usb
 {
